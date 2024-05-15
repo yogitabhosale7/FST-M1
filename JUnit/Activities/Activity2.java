@@ -1,13 +1,7 @@
-package Activities;
-
-
-
 import org.junit.jupiter.api.Test;
-import activityPrograms.BankAccount;
-import activityPrograms.NotEnoughFundsException;
+import Activities.BankAccount;
+import Activities.NotEnoughFundsException;
 import static org.junit.jupiter.api.Assertions.*;
-
-
 
 class Activity2 {
 
