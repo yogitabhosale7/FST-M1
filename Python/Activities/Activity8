@@ -1,0 +1,13 @@
+
+number_list= [1,2,3,4,1]
+print("the list of number", number_list)
+
+firstnum=number_list[0]
+lastnum=number_list[-1]
+
+if(firstnum==lastnum):
+    print(True)
+else:
+    print(False)
+
+        
