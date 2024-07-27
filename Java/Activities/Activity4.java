@@ -1,6 +1,6 @@
 package Activities;
 
-public class activity4 {
+public class Activity4 {
 
     static void sort(int[] sortArray){
         int n = sortArray.length;
