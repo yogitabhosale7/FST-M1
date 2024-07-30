@@ -1,4 +1,5 @@
 package stepDefinitions;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 
 public class LoginSteps {
@@ -53,4 +55,22 @@ public class LoginSteps {
     public void closeBrowser() {
         driver.close();
     }
-}
+
+    @When("User enters the following username and password")
+    public void user_enters_and(DataTable dataTable) {
+        List<List<String>> credentials = dataTable.asLists();
+            for(int i=1;i<credentials.size();i++){
+                List<String> row=credentials.get(i);
+                String username = row.get(0);
+                String password = row.get(1);
+                driver.findElement(By.id("username")).clear();
+                driver.findElement(By.id("username")).sendKeys(username);
+                driver.findElement(By.id("password")).clear();
+                driver.findElement(By.id("password")).sendKeys(password);
+                driver.findElement(By.xpath("//button[@type='submit']")).click();
+            }
+
+            }
+
+
+        }
