@@ -29,8 +29,9 @@ public class GoogleSearchSteps {
 
     @Then("^Show how many search results were shown$")
     public void showHowManySearchResultsWereShown() throws Throwable {
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("search")));
-        System.out.println("element located ");
+       wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("result-stats")));
+            String resultStats = driver.findElement(By.id("result-stats")).getText();
+            System.out.println("Number of results found: " + resultStats);
     }
 
 
